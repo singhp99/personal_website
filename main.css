@@ -6,7 +6,7 @@ html, body {
 }
 
 
-.parallax_home, .parallax_home {
+.parallax_home, .parallax_home2 {
     background-image: url("downloaded_image6.png");
     background-color: rgb(16,12,9);
     height: 100vh;
@@ -19,11 +19,13 @@ html, body {
     z-index: 1;
     
 }
+
+
 .reveal-left, .reveal-right1, .reveal-right2 {
     position: absolute;
     width: 50%;
     height: 100%;
-    background-color: #211813;
+    background-color: #211813 ;
     z-index: 2; 
 }
 
@@ -93,31 +95,41 @@ html, body {
 }
 
 .intro-box,
-.intro-box2, .intro-box3 {
+.intro-box2{
     position: absolute;
-    font-family: Verdana, sans-serif;
-    font-size: clamp(3rem, 8vw, 10rem); /* bigger than before */
-    color: pink;
-    width: 70%;
-    height: 15%;
+    font-family: "Garamond", "Palatino Linotype", "Times New Roman", serif;
+    font-size: clamp(3rem, 4vw, 6rem); 
+    color: #ffc0cb;
+    width: 100%;
+    height: 8%;
     z-index: 3;
 }
 
-/* First line positioning */
 .intro-box {
-    transform: translateX(42%);
     text-align: right;
-    top: 1%; 
-}
 
-/* Second line positioning */
-.intro-box2 {
-    text-align: left;
-    top: 1%; 
     
 }
 
-.intro-box3 {
-    left: 10%;  
-    top: 94%;
+.intro-box2 {
+    text-align: left;
+    
+    
+}
+
+.character {
+    height: 80%;
+    width: 80%;
+    transform: translate(25%,20%);
+}
+
+.parallax_home2 {
+    position: relative;
+}
+.small-character {
+    position: absolute;  
+    top: 64%;            
+    left: 10%;           
+    width: 12rem;
+    height: 18rem;
 }
