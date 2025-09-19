@@ -98,29 +98,60 @@ html, body {
 .intro-box2{
     position: absolute;
     font-family: "Garamond", "Palatino Linotype", "Times New Roman", serif;
-    font-size: clamp(3rem, 4vw, 6rem); 
+    font-size: clamp(5rem,15vw, 15rem); 
     color: #ffc0cb;
     width: 100%;
-    height: 8%;
+    height: 25%;
+    margin: auto;
     z-index: 3;
+    top: 0;
 }
 
 .intro-box {
-    text-align: right;
-
-    
+    text-align: right;  
 }
 
 .intro-box2 {
     text-align: left;
-    
-    
 }
+
+.intro-box3 {
+    position: absolute;
+    font-family: "Garamond", "Palatino Linotype", "Times New Roman", serif;
+    font-size: clamp(2rem, 4vw, 6rem); 
+    color: #ffc0cb;
+    text-align: left;
+    overflow-wrap: break-word;
+    height: 20%;
+    /* width: 10%; */
+    z-index: 3;
+    bottom: 0;
+    right: 15%;
+    margin: auto;
+    /* background-color: red; */
+}
+.intro-box4 {
+    position: absolute;
+    font-family: "Garamond", "Palatino Linotype", "Times New Roman", serif;
+    font-size: clamp(1rem, 1vw); 
+    color: #ffc0cb;
+    text-align: left;
+    overflow-wrap: break-word;
+    height: 12%;
+    width: 60%;
+    text-align: center;
+    z-index: 3;
+    bottom: 0;
+    right: 15%;
+    margin: auto;  
+}
+
 
 .character {
     height: 80%;
     width: 80%;
-    transform: translate(25%,20%);
+    transform: translate(25%,34%);
+    position: relative;
 }
 
 .parallax_home2 {
@@ -129,7 +160,72 @@ html, body {
 .small-character {
     position: absolute;  
     top: 64%;            
-    left: 10%;           
+    left: 10%;         
     width: 12rem;
     height: 18rem;
+}
+
+.hidden {
+    visibility: hidden;
+}
+.character:hover .hidden {
+    position: absolute;
+    width:12%;
+    height: 15%;
+    visibility: visible;
+    color: pink;
+    top: 40%;
+    font-size: 1rem;
+    font-family: "Garamond", "Palatino Linotype", "Times New Roman", serif;
+    z-index: 4;
+}
+
+.hidden2 {
+    visibility: hidden;
+}
+
+.small-character:hover .hidden2 {
+    visibility: visible;
+    position: absolute;
+    width:100%;
+    height: 5%;
+    color: pink;
+    text-align: center;
+    top: 2%;
+    font-size: 1rem;
+    font-family: "Garamond", "Palatino Linotype", "Times New Roman", serif;
+}
+
+@media only screen and (max-width: 600px) {
+    .character {
+        height: 70%;
+        transform: translateY(0%);
+}
+    .hidden {
+        height: 100%;
+        bottom: 10%;
+        right: 0;
+    }
+
+    .rukia {
+        width: 50vw;
+        height: 52vh;
+  }
+    .small-character {
+        width: 8rem;
+        height: 10rem;
+        top: 75%;
+  }
+    .hidden2 {
+        top: 80%;
+
+  }
+    .rukia2 {
+        width: 16vw;
+        height: 18vh;
+        transform: translateY(20%);
+        margin: auto;
+  }
+  
+   
 }
