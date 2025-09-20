@@ -1,5 +1,4 @@
 
-// inspired by https://dev.to/foundsiders/frontend-shorts-easily-rotate-the-element-on-scroll-with-javascript-1g4p
 
 window.onscroll = function () {
     scrollRotate();
@@ -22,7 +21,7 @@ function scrollHorizon() {
     const scrollPosition = window.scrollY;
     const translateXValue = scrollPosition * 0.8;
     
-     classes.forEach(cl => {
+    classes.forEach(cl => {
         let elements = document.getElementsByClassName(cl);
         for (let el of elements) {
             if (cl === "reveal-left" ) {
@@ -35,3 +34,27 @@ function scrollHorizon() {
 }
 
 window.addEventListener("scroll", scrollHorizon);
+
+function linkHover(triggerSelector, targetSelector, targetSelectorTwo, hideSelector) {
+    const trigger = document.querySelector(triggerSelector);
+    const toShow = document.querySelector(targetSelector);
+    const toShowTwo = document.querySelector(targetSelectorTwo);
+    const toHide = document.querySelector(hideSelector);
+
+    if (!trigger) return;
+
+    trigger.addEventListener('mouseenter', () => {
+        if (toShow) toShow.style.visibility = 'visible';
+        if (toShowTwo) toShowTwo.style.visibility = 'visible';
+        if (toHide) toHide.style.visibility = 'hidden';
+    });
+
+    trigger.addEventListener('mouseleave', () => {
+        if (toShow) toShow.style.visibility = 'hidden';
+        if (toShowTwo) toShowTwo.style.visibility = 'hidden';
+        if (toHide) toHide.style.visibility = 'visible';
+    });
+}
+
+// Usage
+linkHover('.reveal-right1', '.intro-hidden','.intro-box3','.intro-box4');
