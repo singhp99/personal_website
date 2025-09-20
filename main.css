@@ -203,7 +203,9 @@ html, body {
     .hidden2 { top: 60%; }
     .rukia2 { width: 16vw; height: 18vh; transform: translateY(20%); margin: auto; }
     .intro-box3 {text-align: right;}
-    .intro-hidden {top: 25%}
+    .intro-hidden {top: 25%; width: 25%;}
     .reveal-right1, .reveal-right2 {background-size: 21vw auto;}
 
 }
+
+
