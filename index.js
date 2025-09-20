@@ -35,26 +35,26 @@ function scrollHorizon() {
 
 window.addEventListener("scroll", scrollHorizon);
 
-function linkHover(triggerSelector, targetSelector, targetSelectorTwo, hideSelector) {
+function linkHover(triggerSelector, targetSelector, targetSelectorTwo) {
     const trigger = document.querySelector(triggerSelector);
     const toShow = document.querySelector(targetSelector);
     const toShowTwo = document.querySelector(targetSelectorTwo);
-    const toHide = document.querySelector(hideSelector);
+    // const toHide = document.querySelector(hideSelector);
 
     if (!trigger) return;
 
     trigger.addEventListener('mouseenter', () => {
         if (toShow) toShow.style.visibility = 'visible';
         if (toShowTwo) toShowTwo.style.visibility = 'visible';
-        if (toHide) toHide.style.visibility = 'hidden';
+        // if (toHide) toHide.style.visibility = 'hidden';
     });
 
     trigger.addEventListener('mouseleave', () => {
         if (toShow) toShow.style.visibility = 'hidden';
         if (toShowTwo) toShowTwo.style.visibility = 'hidden';
-        if (toHide) toHide.style.visibility = 'visible';
+        // if (toHide) toHide.style.visibility = 'visible';
     });
 }
 
 // Usage
-linkHover('.reveal-right1', '.intro-hidden','.intro-box3','.intro-box4');
+linkHover('.reveal-right1', '.intro-hidden','.intro-box3');
