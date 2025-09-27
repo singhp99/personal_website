@@ -19,7 +19,7 @@ function scrollRotate() {
 function scrollHorizon() {
     let classes = ["reveal-left","reveal-right1", "reveal-right2"]
     const scrollPosition = window.scrollY;
-    const translateXValue = scrollPosition * 0.8;
+    const translateXValue = scrollPosition * 0.76;
     
     classes.forEach(cl => {
         let elements = document.getElementsByClassName(cl);
@@ -56,5 +56,13 @@ function linkHover(triggerSelector, targetSelector, targetSelectorTwo) {
     });
 }
 
-// Usage
 linkHover('.reveal-right1', '.intro-hidden','.intro-box3');
+
+var burgerMenu = document.getElementsByClassName('burger-menu');
+
+var overlay = document.getElementsByClassName('menu');
+
+burgerMenu.addEventListener('click', function() {
+  this.classList.toggle("close");
+  overlay.classList.toggle("overlay");
+});

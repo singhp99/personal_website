@@ -41,6 +41,8 @@ html, body {
     z-index: 2;
 }
 
+
+
 .reveal-right1, .reveal-right2 { 
     right: 0; 
     background-image: url(image.png);
@@ -139,9 +141,6 @@ html, body {
     background-color: #211813;
 }
 
-
-
-
 .character-container {
     position: absolute;
     width: 80%;
@@ -180,6 +179,103 @@ html, body {
     height: 18rem;
 }
 
+
+.burger-menu {
+    position: absolute;
+    cursor: pointer;
+    bottom: 8%;
+    right: 12%;
+    height: 4rem;
+    width: 4rem;
+    overflow: visible;
+    background-color: red;
+    z-index: 2;
+
+    span,
+    span::before,
+    span::after {
+        background: #fff;
+        display: block;
+        height: 0.5rem;
+        position: absolute;
+        width: 70%;
+        left: 15%;
+        transition: 0.3s ease-in-out;
+        content: '';
+    }
+
+    span {
+        top: 45%;
+    }
+
+    span::before {
+        top: 25%;
+    }
+
+    span::after {
+        top: 65%;
+    }
+
+    &.close {
+        span {
+            transform: rotate(-45deg);
+            top: 45%;
+        }
+
+        span::before {
+            top: 0;
+            transform: rotate(90deg);
+        }
+
+        span::after {
+            top: 0;
+            transform: rotate(90deg);
+            opacity: 0;
+            width: 0;
+        }
+    }
+}
+
+
+.menu {
+	z-index: 4;
+    position: absolute ;
+	min-width: 100%;
+	min-height: 100%;
+	position: fixed;
+	top: 0;
+	height: 0;
+	visibility: hidden;
+	opacity: 0;
+	text-align: center;
+	padding-top: 20px;
+	transition: all 0.3s ease-in-out;
+
+	&.overlay {
+		visibility: visible;
+		opacity: 1;
+		padding-top: 100px;
+		background: rgba(0, 0, 0, 0.5);
+	}
+
+	ul {
+		padding: 0;
+	}
+
+	li {
+		list-style: none;
+	}
+
+	a {
+		color: #fff;
+		display: block;
+		font-size: 32px;
+		margin-bottom: 30px;
+		text-decoration: none;
+	}
+}
+
+
 .hidden2 { visibility: hidden; }
 
 
@@ -187,24 +283,49 @@ html, body {
     visibility: visible;
     position: absolute;
     width: 100%;
-    height: 5%;
+    height: 20%;
+    /* background-color: red; */
     color: pink;
     text-align: center;
     top: 2%;
     font-size: 1rem;
 }
 
+.myname {
+    height: 16%;
+    width: 100%;
+    position: relative;
+    font-family: "Garamond", "Palatino Linotype", "Times New Roman", serif;
+    color: #ffc0cb;
+    font-size: clamp(4rem, 10vw, 7rem);
+    text-align: center;
+    z-index: 1;
+}
+
+.welcome {
+    height: 10%;
+    width: 100%;
+    position: relative;
+    font-family: "Garamond", "Palatino Linotype", "Times New Roman", serif;
+    color: #be2784;
+    font-size: clamp(2rem, 1vw, 3rem);
+    text-align: center;
+    z-index: 1;
+}
+
 
 @media only screen and (max-width: 700px) {
     .character { height: 70%; transform: translateY(0%); }
-    .hidden { height: 100%; right: 0; top: 0; width: 55%; font-size: 1rem;}
+    .hidden { height: 100%; right: 0; top: 0; width: 75%; font-size: 1rem;}
     .rukia { width: 50vw; height: 52vh; }
-    .small-character { width: 8rem; height: 10rem; top: 75%; }
-    .hidden2 { top: 60%; }
+    .small-character { width: 8rem; height: 8rem; bottom: 2rem; }
+    .hidden2 {height: 70rem; }
     .rukia2 { width: 16vw; height: 18vh; transform: translateY(20%); margin: auto; }
     .intro-box3 {text-align: right;}
-    .intro-hidden {top: 25%; width: 25%;}
+    .intro-box4 {bottom:10%;}
+    .intro-hidden {top: 25%; width: 35%;}
     .reveal-right1, .reveal-right2 {background-size: 21vw auto;}
+    .myname {height: 20%; line-height: 95%;}
 
 }
 
