@@ -41,8 +41,6 @@ html, body {
     z-index: 2;
 }
 
-
-
 .reveal-right1, .reveal-right2 { 
     right: 0; 
     background-image: url(image.png);
@@ -179,100 +177,34 @@ html, body {
     height: 18rem;
 }
 
-
-.burger-menu {
+.burger-menu{
     position: absolute;
+    height: 8%;    
+    width: 5%;
+    right: 15%;   
+    bottom: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;  
+    align-items: center;
     cursor: pointer;
-    bottom: 8%;
-    right: 12%;
-    height: 4rem;
-    width: 4rem;
-    overflow: visible;
-    background-color: red;
-    z-index: 2;
-
-    span,
-    span::before,
-    span::after {
-        background: #fff;
-        display: block;
-        height: 0.5rem;
-        position: absolute;
-        width: 70%;
-        left: 15%;
-        transition: 0.3s ease-in-out;
-        content: '';
-    }
-
-    span {
-        top: 45%;
-    }
-
-    span::before {
-        top: 25%;
-    }
-
-    span::after {
-        top: 65%;
-    }
-
-    &.close {
-        span {
-            transform: rotate(-45deg);
-            top: 45%;
-        }
-
-        span::before {
-            top: 0;
-            transform: rotate(90deg);
-        }
-
-        span::after {
-            top: 0;
-            transform: rotate(90deg);
-            opacity: 0;
-            width: 0;
-        }
-    }
 }
 
+.bar1, .bar2, .bar3 {
+    width: 70%;
+    height: 10%;         
+    background-color: pink;
+    transition: 0.4s;
+}
 
-.menu {
-	z-index: 4;
-    position: absolute ;
-	min-width: 100%;
-	min-height: 100%;
-	position: fixed;
-	top: 0;
-	height: 0;
-	visibility: hidden;
-	opacity: 0;
-	text-align: center;
-	padding-top: 20px;
-	transition: all 0.3s ease-in-out;
+.change .bar1 {
+    transform: translateY(1.5rem);
+}
 
-	&.overlay {
-		visibility: visible;
-		opacity: 1;
-		padding-top: 100px;
-		background: rgba(0, 0, 0, 0.5);
-	}
+.change .bar2 {height: 12%;}
 
-	ul {
-		padding: 0;
-	}
-
-	li {
-		list-style: none;
-	}
-
-	a {
-		color: #fff;
-		display: block;
-		font-size: 32px;
-		margin-bottom: 30px;
-		text-decoration: none;
-	}
+.change .bar3 {
+    transform: translateY(-1.5rem);
 }
 
 
@@ -326,6 +258,7 @@ html, body {
     .intro-hidden {top: 25%; width: 35%;}
     .reveal-right1, .reveal-right2 {background-size: 21vw auto;}
     .myname {height: 20%; line-height: 95%;}
+    .burger-menu{width: 10%;}
 
 }
 
