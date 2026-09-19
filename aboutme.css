@@ -1,0 +1,222 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    scroll-behavior: smooth;
+    scrollbar-width: auto; 
+    -ms-overflow-style: none;
+    scrollbar-color: #ffc0cb #be2784;
+}
+
+
+.wrapper {
+    position: relative;
+    width: 100%;
+    overflow-x: hidden; 
+    overflow-y: hidden;
+}
+
+.html .body::-webkit-scrollbar {
+    display: none; 
+}
+
+.parallax_home {
+    background-color: rgb(16,12,9);
+}
+
+.parallax_home, .parallax_home2 {
+    background-image: url("image.png");
+    
+    height: 100vh;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: repeat;
+    background-size: 10vw auto;
+    position: relative;
+    z-index: 1;
+}
+
+.intro_abme{
+    position: fixed;
+    height: 35%;
+    width: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: pink;
+    z-index: 2;
+    overflow: auto;
+}
+
+
+
+.circle {
+    position: absolute;
+    left: 20%;              
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 17vw;
+    height: 17vw; 
+    min-width: 160px;
+    min-height: 160px;
+    border-radius: 50%;
+    border-width: 3px;
+    border-color: rgb(16,12,9);
+    border-style:groove; 
+}
+
+.abme-text{
+    position: absolute;
+    right: 3%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 56%;
+    max-height: 80%;
+    /* (1rem,10vw,4rem) */
+    font-size: clamp(1rem, 1.67vw, 1.8rem);
+    color: rgb(16,12,9);
+    text-align: center;
+    /* background-color: red; */
+    overflow: auto;
+    text-wrap:balance;
+}
+
+.burger-menu{
+    position: fixed;
+    height: 8%;    
+    width: 5%;
+    right: 8%;   
+    bottom: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;  
+    align-items: center;
+    cursor: pointer;
+    z-index: 5;
+}
+
+.small-character {
+    position: fixed;
+    bottom: 0;
+    left: 5%;
+    width: 12rem;
+    height: 18rem;
+    z-index: 3;
+}
+
+
+.small-character:hover .hidden2 {
+    visibility: visible;
+    position: absolute;
+    width: 60%;
+    height: 10%;
+    /* background-color: black; */
+    color: rgb(16,12,9);
+    -webkit-text-stroke: 1px white;
+    text-align: center;
+    top: 0%;
+    font-size: 2rem;
+}
+
+
+.hidden2 { visibility: hidden; }
+
+.bar1, .bar2, .bar3 {
+    position: absolute;
+    width: 90%;
+    height: 8px;
+    background-color: #781552;
+    left: 0;
+    transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+
+.bar1 { top: 10%; }
+.bar2 { top: 50%; transform: translateY(-50%); }
+.bar3 { bottom: 10%; }
+
+.change .bar1 {
+    top: 50%;
+    height: 10px;
+    transform: translateY(-50%) rotate(45deg);
+    background-color: #211813;
+}
+
+.change .bar2 {
+    opacity: 0;
+}
+
+.change .bar3 {
+    bottom: auto;
+    height: 10px;
+    top: 50%;
+    transform: translateY(-50%) rotate(-45deg);
+    background-color: #211813;
+}
+
+
+.menu-appear {
+    position:fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: pink;
+    z-index: 4;
+    display: none;  
+}
+
+.menu-appear.active {
+    display: block;  
+}
+
+.home, .crochet, .culinary, .photography, .research, .coding, .contact-me  {
+    position: inherit;
+    width: 100%;
+    height: 5rem;
+    text-align: center;
+    font-size: clamp(1rem,10vw,4rem);
+}
+
+a {
+    color: #be2784;
+    text-decoration: none;
+}
+
+a:hover {
+    color: rgb(243, 171, 183);
+    cursor: url("cherry_blossom_icon_32x32.png") 32 32,pointer;
+}
+
+.photography{top: 39vh;}
+
+.home{top: 3vh;}
+
+.crochet{top: 15vh;}
+
+.culinary{top: 27vh;}
+
+.research{top: 51vh;}
+
+.coding{top: 63vh;}
+
+.contact-me{top: 75vh;}
+
+
+@media only screen and (max-width: 800px) {
+    .small-character { width: 8rem; height: 8rem; bottom: 15%; left: 0;}
+    .hidden2 {height: 800px; font-size: 0.5rem;}
+    .burger-menu{width: 10%; bottom:15%;}
+    .home, .crochet, .culinary, .photography, .research, .coding, .contact-me {height: 2rem;}
+    .bar1, .bar2, .bar3 {height:5px;}
+    .change .bar1 {height: 5px;}
+    .change .bar3 {height: 5px;}
+    .circle{top:25%;left:50%;}
+    .intro_abme{height: 60vh;}
+    .abme-text{width:86%; height:55%; left:7%; top:77%;font-size: clamp(0.9rem,1.4vw,2rem); text-align:center;}
+}

@@ -1,12 +1,17 @@
 
-function myFunction(x) {
-    x.classList.toggle("change");
-}
+const burger = document.getElementById("burger");
+const menu = document.getElementById("menu");
+
+burger.addEventListener("click", () => {
+    burger.classList.toggle("change");
+    menu.classList.toggle("active");
+});
 
 
 window.onscroll = function () {
     scrollRotate();
 };
+
 
 
 
