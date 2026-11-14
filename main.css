@@ -326,13 +326,14 @@ a:hover {
     .rukia { width: 50vw; height: 52vh; }
     .small-character { width: 8rem; height: 8rem; bottom: 2rem; }
     .intro-box .intro-box2 {top:20%}
-    .hidden2 {height: 70rem; }
+    .hidden2 {height: 70rem;}
+    .small-character:hover .hidden2{top:-60%;}
     .rukia2 { width: 16vw; height: 18vh; margin: auto; transform: translateY(-35%); }
     .intro-box3 {text-align: right; bottom:25%}
     .intro-box4 {bottom:15%;}
     .intro-hidden {top: 25%; width: 35%;}
     .reveal-right1, .reveal-right2 {background-size: 21vw auto;}
-    .myname {height: 20%; line-height: 95%; top:15%}
+    .myname {height: 20%; line-height: 95%; top:13%}
     /* .welcome {transform: translateY(0rem);} */
     .burger-menu{width: 10%; bottom: 15%}
     .about-me, .crochet, .culinary, .photography, .research, .coding, .contact-me {height: 2rem;}

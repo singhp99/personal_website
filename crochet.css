@@ -1,0 +1,222 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    scroll-behavior: smooth;
+    scrollbar-width: auto; 
+    -ms-overflow-style: none;
+    scrollbar-color: #ffc0cb #be2784;
+    background-color: rgb(16,12,9);
+    background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("downloaded_image.png");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: repeat;
+    background-size: 8vw auto;
+    position: relative; 
+}
+
+
+
+.html .body::-webkit-scrollbar {
+    display: none; 
+}
+
+.crochet-title {
+    height: 25%;
+    width: 100%;
+    top: 10%;
+    font-family: "Garamond", "Palatino Linotype", "Times New Roman", serif;
+    color: #ffc0cb;
+    
+    /* background-color: red; */
+    font-size: clamp(5.5rem, 10vw, 10rem);
+    -webkit-text-stroke: 3px #be2784;
+    text-align: center;
+    z-index: 2;
+}
+.gallery {
+    z-index: 1;
+
+    columns: 3 260px;          
+    column-gap: 5rem;
+    padding: 4rem 10%;         
+}
+
+.piece {
+    break-inside: avoid;       
+    margin-bottom: 7em;
+    padding: 1.2rem;
+    background: #be2784;
+    position: relative;
+    cursor: url("cherry_blossom_icon_32x32.png") 32 32, pointer;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+
+.piece::before {
+    content: "";
+    position: absolute;
+    inset: 0.5rem;
+    border: 3px dashed #ffc0cb;
+    pointer-events: none;
+}
+
+.piece img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+/* 
+.piece  {
+    font-family: "Garamond", "Palatino Linotype", "Times New Roman", serif;
+    color: #781552;
+    text-align: center;
+    font-size: clamp(1rem, 1.4vw, 1.4rem);
+    padding-top: 0.6rem;
+} */
+
+.piece:hover {
+    transform: rotate(-8.5deg) scale(1.02);
+    box-shadow: 0 0 5rem rgba(255, 192, 203, 0.35);
+}
+.piece:nth-child(even):hover { transform: rotate(8.5deg) scale(1.02);}
+
+
+.burger-menu{
+    position: fixed;
+    height: 8%;    
+    width: 5%;
+    right: 2%;   
+    bottom: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;  
+    align-items: center;
+    cursor: pointer;
+    z-index: 5;
+}
+
+.small-character {
+    position: fixed;
+    bottom: 0;
+    left: 3%;
+    width: 6rem;
+    height: 12rem;
+    z-index: 3;
+}
+
+
+.small-character:hover .hidden2 {
+    visibility: visible;
+    position: absolute;
+    width: 60%;
+    height: 10%;
+    /* background-color: black; */
+    color: rgb(16,12,9);
+    -webkit-text-stroke: 1px white;
+    text-align: center;
+    top: 0%;
+    font-size: 2rem;
+}
+
+
+.hidden2 { visibility: hidden; }
+
+.bar1, .bar2, .bar3 {
+    position: absolute;
+    width: 90%;
+    height: 8px;
+    background-color: #ffc0cb;
+    left: 0;
+    transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+
+.bar1 { top: 10%; }
+.bar2 { top: 50%; transform: translateY(-50%); }
+.bar3 { bottom: 10%; }
+
+.change .bar1 {
+    top: 50%;
+    height: 10px;
+    transform: translateY(-50%) rotate(45deg);
+    background-color: #211813;
+}
+
+.change .bar2 {
+    opacity: 0;
+}
+
+.change .bar3 {
+    bottom: auto;
+    height: 10px;
+    top: 50%;
+    transform: translateY(-50%) rotate(-45deg);
+    background-color: #211813;
+}
+
+
+.menu-appear {
+    position:fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: pink;
+    z-index: 4;
+    display: none;  
+}
+
+.menu-appear.active {
+    display: block;  
+}
+
+.home, .about-me, .culinary, .photography, .research, .coding, .contact-me  {
+    position: inherit;
+    width: 100%;
+    height: 5rem;
+    text-align: center;
+    font-size: clamp(1rem,10vw,4rem);
+}
+
+a {
+    color: #be2784;
+    text-decoration: none;
+}
+
+a:hover {
+    color: rgb(243, 171, 183);
+    cursor: url("cherry_blossom_icon_32x32.png") 32 32,pointer;
+}
+
+.photography{top: 39vh;}
+
+.home{top: 3vh;}
+
+.about-me{top: 15vh;}
+
+.culinary{top: 27vh;}
+
+.research{top: 51vh;}
+
+.coding{top: 63vh;}
+
+.contact-me{top: 75vh;}
+
+
+@media only screen and (max-width: 800px) {
+    .small-character { width: 8rem; height: 8rem; bottom: 15%; left: 0;}
+    .burger-menu{width: 10%; bottom:15%;}
+    .home, .about-me, .culinary, .photography, .research, .coding, .contact-me {height: 2rem;}
+    .bar1, .bar2, .bar3 {height:5px;}
+    .change .bar1 {height: 5px;}
+    .change .bar3 {height: 5px;}
+}

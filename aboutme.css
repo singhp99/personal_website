@@ -30,8 +30,10 @@ html, body {
 }
 
 .parallax_home, .parallax_home2 {
-    background-image: url("image.png");
-    
+    /* background-image: url("image.png"); */
+    background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("image.png");
     height: 100vh;
     background-attachment: fixed;
     background-position: center;
@@ -219,4 +221,37 @@ a:hover {
     .circle{top:25%;left:50%;}
     .intro_abme{height: 60vh;}
     .abme-text{width:86%; height:55%; left:7%; top:77%;font-size: clamp(0.9rem,1.4vw,2rem); text-align:center;}
+}
+
+.petals {
+    position: fixed; inset: 0;
+    pointer-events: none;                
+    z-index: 3;
+    overflow: hidden;
+}
+
+.petals span {
+    position: absolute;
+    top: -5%;
+    width: 18px; height: 10px;
+    background:  #be2784;
+    border-radius: 150% 0 150% 0;         /* petal shape */
+    opacity: 0.9;
+    animation: fall linear infinite;
+}
+.petals span:nth-child(1)  { left: 5%;  animation-duration: 11s; animation-delay: 0s; }
+.petals span:nth-child(2)  { left: 15%; animation-duration: 14s; animation-delay: 2s;}
+.petals span:nth-child(3)  { left: 28%; animation-duration: 9s;  animation-delay: 4s; }
+.petals span:nth-child(4)  { left: 40%; animation-duration: 13s; animation-delay: 1s; }
+.petals span:nth-child(5)  { left: 52%; animation-duration: 10s; animation-delay: 3s; }
+.petals span:nth-child(6)  { left: 63%; animation-duration: 15s; animation-delay: 5s; }
+.petals span:nth-child(7)  { left: 72%; animation-duration: 12s; animation-delay: 1s; }
+.petals span:nth-child(8)  { left: 81%; animation-duration: 9s;  animation-delay: 3s; }
+.petals span:nth-child(9)  { left: 90%; animation-duration: 14s; animation-delay: 4s; }
+.petals span:nth-child(10) { left: 96%; animation-duration: 11s; animation-delay: 1.5s; }
+
+@keyframes fall {
+    0%   { transform: translate(0, 0) rotate(0deg); }
+    50%  { transform: translate(-60px, 55vh) rotate(180deg); }
+    100% { transform: translate(40px, 110vh) rotate(360deg); }
 }

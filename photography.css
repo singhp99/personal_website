@@ -1,0 +1,239 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    scroll-behavior: smooth;
+    scrollbar-width: auto;
+    -ms-overflow-style: none;
+    scrollbar-color: #ffc0cb #be2784;
+    background-color: rgb(16,12,9);
+    background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("image.png");
+    /* background-image: url("downloaded_image6.png"); */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: repeat;
+    background-size: 8vw auto;
+    position: relative;  
+}
+
+.photo-title {
+    padding: 3rem 0 2rem;
+    font-family: "Garamond", "Palatino Linotype", "Times New Roman", serif;
+    color: #ffc0cb;
+    font-size: clamp(2rem, 9vw, 9rem);
+    -webkit-text-stroke: 3px #be2784;  
+    display: flex;
+    align-items: center;      /* Centers vertically */
+    justify-content: center;
+}
+
+
+.film-strip {
+    position: relative;
+    width: 80%;                      
+    margin: 0 auto 4rem;
+    background: #ffc0cb;
+    border-radius: 0.5rem;
+}
+
+
+.film-strip::before,
+.film-strip::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 1.4rem;
+    background-image: linear-gradient(to bottom, #211813 0 50%, transparent 50% 100%);
+    background-size: 100% 2.4rem;  
+    background-position: 0 var(--shift, 0px);
+}
+.film-strip::before { left: 1rem; }
+.film-strip::after  { right: 1rem; }
+
+.gallery {
+    columns: 3 280px;
+    column-gap: 2rem;
+    padding: 2rem 5%;
+}
+
+.shot {
+    position: relative;
+    break-inside: avoid;
+    margin-bottom: 2rem;
+    cursor: url("cherry_blossom_icon_32x32.png") 32 32, pointer;
+    padding: 0.4rem;
+    background: rgb(16,12,9);
+    transition: box-shadow 0.4s ease, background 0.4s ease;
+    opacity: 0;
+    transform: translateY(2rem);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.shot img {
+    display: block;
+    width: 100%;
+    height: auto;             
+}
+
+.shot:hover {
+    background: #be2784;
+    box-shadow: 0 0 3rem rgba(255, 192, 203, 0.4);
+}
+
+
+
+.shot.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+.burger-menu{
+    position: fixed;
+    height: 8%;    
+    width: 5%;
+    right: 2%;   
+    bottom: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;  
+    align-items: center;
+    cursor: pointer;
+    z-index: 5;
+}
+
+.small-character {
+    position: fixed;
+    bottom: 0;
+    left: 3%;
+    width: 6rem;
+    height: 12rem;
+    z-index: 3;
+}
+
+
+.small-character:hover .hidden2 {
+    visibility: visible;
+    position: absolute;
+    width: 60%;
+    height: 10%;
+    /* background-color: black; */
+    color: rgb(16,12,9);
+    -webkit-text-stroke: 1px white;
+    text-align: center;
+    top: -20%;
+    font-size: 1rem;
+}
+
+
+.hidden2 { visibility: hidden; }
+
+.bar1, .bar2, .bar3 {
+    position: absolute;
+    width: 90%;
+    height: 8px;
+    background-color: #ffc0cb;
+    left: 0;
+    transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+
+.bar1 { top: 10%; }
+.bar2 { top: 50%; transform: translateY(-50%); }
+.bar3 { bottom: 10%; }
+
+.change .bar1 {
+    top: 50%;
+    height: 10px;
+    transform: translateY(-50%) rotate(45deg);
+    background-color: #211813;
+}
+
+.change .bar2 {
+    opacity: 0;
+}
+
+.change .bar3 {
+    bottom: auto;
+    height: 10px;
+    top: 50%;
+    transform: translateY(-50%) rotate(-45deg);
+    background-color: #211813;
+}
+
+
+.menu-appear {
+    position:fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: pink;
+    z-index: 4;
+    display: none;  
+}
+
+.menu-appear.active {
+    display: block;  
+}
+
+.home, .about-me, .crochet, .culinary, .research, .coding, .contact-me  {
+    position: inherit;
+    width: 100%;
+    height: 5rem;
+    text-align: center;
+    font-size: clamp(1rem,10vw,4rem);
+}
+
+a {
+    color: #be2784;
+    text-decoration: none;
+}
+
+a:hover {
+    color: rgb(243, 171, 183);
+    cursor: url("cherry_blossom_icon_32x32.png") 32 32,pointer;
+}
+
+.culinary{top: 39vh;}
+
+.home{top: 3vh;}
+
+.about-me{top: 15vh;}
+
+.crochet{top: 27vh;}
+
+.research{top: 51vh;}
+
+.coding{top: 63vh;}
+
+.contact-me{top: 75vh;}
+
+
+
+@media only screen and (max-width: 800px) {
+    .small-character { width: 8rem; height: 8rem; bottom: 15%; left: -5%;}
+    .small-character:hover .hidden2 {left: 15%;}
+    .burger-menu{width: 10%; bottom:15%;}
+    .home, .about-me, .crochet, .culinary .research, .coding, .contact-me {height: 2rem;}
+    .bar1, .bar2, .bar3 {height:5px;background-color: #be2784;}
+    .change .bar1 {height: 5px;}
+    .change .bar3 {height: 5px;}
+    .film-strip { width: 94%; }
+    .film-strip::before, .film-strip::after { width: 0.6rem; background-size: 100% 1.4rem; }
+    .film-strip::before { left: 0.4rem; }
+    .film-strip::after  { right: 0.4rem; }
+    .gallery { columns: 1; padding: 2rem 1.8rem; }
+    .shot { width: 100%; }
+    .gallery { columns: 1; padding: 2rem 0; }
+    .shot { width: 85%; margin: 0 auto 2rem; }
+}

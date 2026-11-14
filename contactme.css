@@ -42,7 +42,7 @@ html, body {
 video {
     position: fixed;
     background-color:rgb(16,12,9);
-    opacity: 0.3;
+    opacity: 0.5;
     top: 50%;
     left: 50%;
     transform: translate(-75%, -50%);
@@ -96,11 +96,8 @@ video {
     text-decoration-line: underline;
     text-decoration-style: wavy;
     text-decoration-color: #ffc0cb;
-    text-decoration-thickness: 5px;
+    text-decoration-thickness: 4px;
 }
-
-a:hover{color: #ffc0cb;}
-
 
 .burger-menu{
     position: absolute;
@@ -197,6 +194,30 @@ a:hover {
 
 .coding{top: 75vh;}
 
+.small-character {
+    position: fixed;
+    bottom: 0;
+    left: 40%;
+    width: 12rem;
+    height: 18rem;
+    z-index: 3;
+}
+
+.small-character:hover .hidden2 {
+    visibility: visible;
+    position: absolute;
+    width: 100%;
+    height: 10%;
+    /* background-color: black; */
+    color: #be2784;
+    -webkit-text-stroke: 1px white;
+    text-align: center;
+    top: -10px;
+    font-size: 2rem;
+}
+
+
+.hidden2 { visibility: hidden; }
 
 
 @media only screen and (max-width: 600px) {
@@ -205,11 +226,11 @@ a:hover {
     .bar1, .bar2, .bar3 {height:5px;}
     .change .bar1 {height: 5px;}
     .change .bar3 {height: 5px;}
-    video {transform: translate(-50%, -50%)}
+    video {transform: translate(-50%, -50%);object-fit: cover;opacity: 0.3;}
     .contact{right:70%;transform: translate(70%, -10%);}
     .contact-info {top: 42%; width:100%; transform: translateX(-70%);}
     .email, .linkedin,.instagram{width: 70%}
-
+    .small-character{width: 10rem; height: 14rem; left: 10%;}
 }
 
 
