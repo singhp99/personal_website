@@ -1,0 +1,265 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    scroll-behavior: smooth;
+    scrollbar-width: auto; 
+    -ms-overflow-style: none;
+    scrollbar-color: #ffc0cb #be2784;
+    background-color: rgb(16,12,9);
+    background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("downloaded_image6.png");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: repeat;
+    background-size: 8vw auto;
+    position: relative;  
+}
+
+.html .body::-webkit-scrollbar {
+    display: none; 
+}
+
+.coding-title {
+    padding: 3rem 0 2rem;
+    font-family: "Courier New", monospace;
+    color: #ffc0cb;
+    font-size: clamp(3.5rem, 9vw, 9rem);
+    text-align: center;
+}
+
+.project h2 {
+    font-family: "Courier New", monospace;
+    font-weight: normal;
+    font-size: clamp(1.2rem, 1.8vw, 1.7rem);
+    color: #ffc0cb;
+    margin-bottom: 0.6rem;
+}
+
+.project p {
+    font-family: "Garamond", "Palatino Linotype", "Times New Roman", serif;
+    font-size: clamp(1rem, 1.3vw, 1.3rem);
+    line-height: 1.4;
+    color: #ffc0cb;
+    margin-bottom: 1rem;
+}
+
+.tags {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.2rem;
+}
+.tags li {
+    font-family: "Courier New", monospace;
+    font-size: 0.85rem;
+    color: #ffc0cb;
+    border: 1px solid #be2784;
+    border-radius: 2rem;
+    padding: 0.15rem 0.7rem;
+}
+
+.project-link {
+    display: inline-block;
+    font-family: "Courier New", monospace;
+    font-size: 1rem;
+    color: #ffc0cb;
+    border: 2px solid #be2784;
+    border-radius: 2rem;
+    padding: 0.4rem 1.2rem;
+    transition: background 0.3s ease;
+    margin-bottom: 0.5rem;
+    
+}
+.project-link:hover {
+    background: #be2784;
+    color: #ffc0cb;
+}
+
+
+
+
+
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 3rem;
+    padding: 2rem 12% 4rem;
+}
+
+.project {
+    position: relative;
+    padding: 3.8rem 1.5rem 1.5rem;        
+    background: transparent;
+    border: 3px solid #ffc0cb;
+    border-radius: 1rem;
+    overflow: hidden;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* title bar with three dots */
+.project::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2.4rem;
+    background:
+        radial-gradient(circle at 1.2rem 50%, #be2784 0.4rem, transparent 0.45rem),
+        radial-gradient(circle at 2.6rem 50%, #781552 0.4rem, transparent 0.45rem),
+        radial-gradient(circle at 4rem 50%,   #211813 0.4rem, transparent 0.45rem),
+        #ffc0cb;
+}
+
+.project h2::before {
+    content: "> ";
+    color: #be2784;
+}
+
+.project:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 3rem rgba(255, 192, 203, 0.35);
+}
+
+
+
+.burger-menu{
+    position: fixed;
+    height: 8%;    
+    width: 5%;
+    right: 2%;   
+    bottom: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;  
+    align-items: center;
+    cursor: pointer;
+    z-index: 5;
+}
+
+.small-character {
+    position: fixed;
+    bottom: 0;
+    left: 3%;
+    width: 6rem;
+    height: 12rem;
+    z-index: 3;
+}
+
+
+.small-character:hover .hidden2 {
+    visibility: visible;
+    position: absolute;
+    width: 60%;
+    height: 10%;
+    /* background-color: black; */
+    color: rgb(16,12,9);
+    -webkit-text-stroke: 1px white;
+    text-align: center;
+    top: -20%;
+    font-size: 1rem;
+}
+
+
+.hidden2 { visibility: hidden; }
+
+.bar1, .bar2, .bar3 {
+    position: absolute;
+    width: 90%;
+    height: 8px;
+    background-color: #ffc0cb;
+    left: 0;
+    transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+
+.bar1 { top: 10%; }
+.bar2 { top: 50%; transform: translateY(-50%); }
+.bar3 { bottom: 10%; }
+
+.change .bar1 {
+    top: 50%;
+    height: 10px;
+    transform: translateY(-50%) rotate(45deg);
+    background-color: #211813;
+}
+
+.change .bar2 {
+    opacity: 0;
+}
+
+.change .bar3 {
+    bottom: auto;
+    height: 10px;
+    top: 50%;
+    transform: translateY(-50%) rotate(-45deg);
+    background-color: #211813;
+}
+
+
+.menu-appear {
+    position:fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: pink;
+    z-index: 4;
+    display: none;  
+}
+
+.menu-appear.active {
+    display: block;  
+}
+
+.home, .about-me, .crochet, .culinary, .photography, .research, .contact-me  {
+    position: inherit;
+    width: 100%;
+    height: 5rem;
+    text-align: center;
+    font-size: clamp(1rem,10vw,4rem);
+}
+
+a {
+    color: #be2784;
+    text-decoration: none;
+}
+
+a:hover {
+    color: rgb(243, 171, 183);
+    cursor: url("cherry_blossom_icon_32x32.png") 32 32,pointer;
+}
+
+.photography{top: 39vh;}
+
+.home{top: 3vh;}
+
+.about-me{top: 15vh;}
+
+.crochet{top: 27vh;}
+
+.culinary{top: 51vh;}
+
+.research{top: 63vh;}
+
+.contact-me{top: 75vh;}
+
+@media only screen and (max-width: 800px) {
+    .small-character { width: 8rem; height: 8rem; bottom: 15%; left: 0;}
+    .hidden2 {height: 800px; font-size: 0.5rem;}
+    .burger-menu{width: 10%; bottom:15%;}
+    .home, .crochet, .culinary, .photography, .research, .about-me, .contact-me {height: 2rem;}
+    .bar1, .bar2, .bar3 {height:5px;}
+    .change .bar1 {height: 5px;}
+    .change .bar3 {height: 5px;}
+    .circle{top:25%;left:50%;}
+    .intro_abme{height: 60vh;}
+    .abme-text{width:86%; height:55%; left:7%; top:77%;font-size: clamp(0.9rem,1.4vw,2rem); text-align:center;}
+}
