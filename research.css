@@ -1,0 +1,260 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    scroll-behavior: smooth;
+    scrollbar-width: auto;
+    -ms-overflow-style: none;
+    scrollbar-color: #ffc0cb #be2784;
+    background-color: rgb(16,12,9);
+    background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("downloaded_image.png");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: repeat;
+    background-size: 10vw auto;
+    position: relative;  
+}
+
+
+.research-title {
+    padding: 3rem 0 1rem;
+    font-family: cursive;
+    color: #ffc0cb;
+    font-size: clamp(4rem, 9vw, 9rem);
+    text-align: center;
+}
+
+.research-intro {
+    max-width: 80%;
+    margin: 0 auto 3rem;
+    padding: 0 1.5rem;
+    font-family: "Garamond", "Palatino Linotype", "Times New Roman", serif;
+    font-size: clamp(1.1rem, 1.5vw, 1.5rem);
+    line-height: 1.5;
+    color: #ffc0cb;
+    text-align: center;
+}
+
+.topic {
+    position: relative;
+    overflow: hidden;
+    border: 0.6rem solid #be2784;
+    border-radius: 1.5rem;
+    cursor: url("cherry_blossom_icon_32x32.png") 32 32, pointer;
+}
+
+.topic-photo { position: relative; }
+
+.topic img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+.topic:hover img { transform: scale(1.06); }
+
+.topic h2 {
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    padding: 0.8rem;
+    background: rgba(33, 24, 19, 0.8);
+    color: #ffc0cb;
+    font-family: "Garamond", "Palatino Linotype", "Times New Roman", serif;
+    font-weight: normal;
+    font-size: clamp(1.2rem, 2vw, 2rem);
+    text-align: center;
+}
+
+.desc {
+    font-family: "Garamond", "Palatino Linotype", "Times New Roman", serif;
+    font-size: clamp(1rem, 1.3vw, 1.3rem);
+    line-height: 1.5;
+}
+
+
+.research {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+    padding: 0 12% 4rem;
+}
+
+.topic .desc { display: none; }         
+
+.popup {
+    margin: auto;                        
+    width: min(950px, 90vw);
+    max-height: 85vh;
+    overflow: auto;
+    padding: 1.5rem;
+    background: #ffc0cb;
+    border: 0.6rem solid #be2784;
+    border-radius: 1.5rem;
+    color: #211813;
+}
+.popup[open] {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    align-items: center;
+}
+.popup::backdrop { background: rgba(16, 12, 9, 0.85); }
+
+.popup img { width: 100%; border-radius: 1rem; }
+
+.popup h2 {
+    font-family: "Garamond", "Palatino Linotype", "Times New Roman", serif;
+    font-weight: normal;
+    font-size: clamp(1.6rem, 3vw, 3rem);
+    color: #be2784;
+    margin-bottom: 0.8rem;
+}
+
+
+
+
+.burger-menu{
+    position: fixed;
+    height: 8%;    
+    width: 5%;
+    right: 2%;   
+    bottom: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;  
+    align-items: center;
+    cursor: pointer;
+    z-index: 5;
+}
+
+.small-character {
+    position: fixed;
+    bottom: 0;
+    left: 3%;
+    width: 6rem;
+    height: 12rem;
+    z-index: 3;
+}
+
+
+.small-character:hover .hidden2 {
+    visibility: visible;
+    position: absolute;
+    width: 60%;
+    height: 10%;
+    /* background-color: black; */
+    color: rgb(16,12,9);
+    -webkit-text-stroke: 1px white;
+    text-align: center;
+    top: -20%;
+    font-size: 1rem;
+}
+
+
+.hidden2 { visibility: hidden; }
+
+.bar1, .bar2, .bar3 {
+    position: absolute;
+    width: 90%;
+    height: 8px;
+    background-color: #ffc0cb;
+    left: 0;
+    transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+
+.bar1 { top: 10%; }
+.bar2 { top: 50%; transform: translateY(-50%); }
+.bar3 { bottom: 10%; }
+
+.change .bar1 {
+    top: 50%;
+    height: 10px;
+    transform: translateY(-50%) rotate(45deg);
+    background-color: #211813;
+}
+
+.change .bar2 {
+    opacity: 0;
+}
+
+.change .bar3 {
+    bottom: auto;
+    height: 10px;
+    top: 50%;
+    transform: translateY(-50%) rotate(-45deg);
+    background-color: #211813;
+}
+
+
+.menu-appear {
+    position:fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: pink;
+    z-index: 4;
+    display: none;  
+}
+
+.menu-appear.active {
+    display: block;  
+}
+
+.home, .about-me, .crochet, .culinary, .photography, .coding, .contact-me  {
+    position: inherit;
+    width: 100%;
+    height: 5rem;
+    text-align: center;
+    font-size: clamp(1rem,10vw,4rem);
+}
+
+a {
+    color: #be2784;
+    text-decoration: none;
+}
+
+a:hover {
+    color: rgb(243, 171, 183);
+    cursor: url("cherry_blossom_icon_32x32.png") 32 32,pointer;
+}
+
+.culinary{top: 39vh;}
+
+.home{top: 3vh;}
+
+.about-me{top: 15vh;}
+
+.crochet{top: 27vh;}
+
+.photography{top: 51vh;}
+
+.coding{top: 63vh;}
+
+.contact-me{top: 75vh;}
+
+@media only screen and (max-width: 800px) {
+    .research { grid-template-columns: 1fr; padding: 0 8% 3rem; }
+    .popup[open] { grid-template-columns: 1fr; }
+    @media only screen and (max-width: 800px) {
+    .small-character { width: 8rem; height: 8rem; bottom: 15%; left: 0;}
+    .hidden2 {height: 800px; font-size: 0.5rem;}
+    .burger-menu{width: 10%; bottom:15%;}
+    .home, .about-me, .crochet, .culinary, .photography, .coding, .contact-me {height: 2rem;}
+    .bar1, .bar2, .bar3 {height:5px;}
+    .change .bar1 {height: 5px;}
+    .change .bar3 {height: 5px;}
+    .circle{top:25%;left:50%;}
+    .intro_abme{height: 60vh;}
+    .abme-text{width:86%; height:55%; left:7%; top:77%;font-size: clamp(0.9rem,1.4vw,2rem); text-align:center;}
+}
+}

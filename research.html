@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crochet page</title>
+
+
+  <link rel="stylesheet" href="research.css">
+  <link href="https://fonts.googleapis.com/css?family=Oswald:700|Poppins" rel="stylesheet">
+
+
+  <script defer src="research.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/ScrollMagic.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/plugins/animation.gsap.js"></script>
+</head>
+
+
+
+<body>
+<div class="research-title">research</div>
+<p class="research-intro">i dedicated my undergrad years to explore all types of research types (observational, theoretical, experimental, and computational) in order to choose what i wanted to pursue for graduate school. i'm so glad i've had the opportunity to do research in many fields of physics throughout my academic career, while receiving guidance from amazing professors. please click on the research tiles to learn more about what i did! </p>
+
+<section class="research">
+  <article class="topic">
+    <div class="topic-photo">
+      <img src="research_photos/astro.jpeg" alt="">
+      <h2>astrophysics</h2>
+    </div>
+    <div class="desc">
+      <p>rr lyrae stars, low-mass variable stars, have periodic pulsations that can be used to calculate stellar distances. changes in temperature and luminosity are experienced by the stars as they evolve, and can be used along with metallicity values [Fe/H] to derive a period-luminosity relationship. for more about this research, checkout my poster! <a href="research_photos/astro_poster.pdf">[view poster]</a></p>
+    </div>
+  </article>
+
+  <article class="topic">
+    <div class="topic-photo">
+      <img src="research_photos/theoretical.jpeg" alt="">
+      <h2>theoretical</h2>
+    </div>
+    <div class="desc">
+      <p>pendulums are mundane objects we see in our daily lives, and in the classical frame, can be used to study non-linear motion. but in the quantum mechanical frame, are often approximated as a harmonic oscillator (e.g. spring). this work explored the two limits of the plane pendulum: harmonic oscillator at low energies and free rotor at high energies or low g. if you would like to know more about this research please click  <a href="research_photos/theoretical_poster.pdf">[view poster]</a> for a brief overview, or <a href="research_photos/theoretical_thesis.pdf">[view thesis]</a> for an in depth look.</p>
+    </div>
+  </article>
+
+   <article class="topic">
+    <div class="topic-photo">
+      <img src="research_photos/gamma.jpeg" alt="">
+      <h2>gamma spectroscopy</h2>
+    </div>
+    <div class="desc">
+      <p>humans are exposed to natural radiation everyday, most soils contain radioactive isotopes of potassium, uranium, or thorium. due to run off near rivers, these isotopes can accumulate through the minerals monazite or zircon. this study searches for natural radioisotopes in the soil of the mississippi river through gamma-gamma-coincidence spectroscopy. if you would like to know more about this research please click  <a href="research_photos/gamma_poster.pdf">[view poster]</a> for a brief overview, or <a href="https://pubs.aip.org/aip/jurp/article/32/1/100005/2908477/Using-Coincidence-Spectroscopy-to-Identify-Natural">[view paper]</a> for an in depth look. </p>
+    </div>
+  </article>
+
+   <article class="topic">
+    <div class="topic-photo">
+      <img src="research_photos/nuclear_struc.png" alt="" style="object-position: 130%">
+      <h2>nuclear structure</h2>
+    </div>
+    <div class="desc">
+      <p>machine learning has allowed us to compensate for experimental labels, by producing classification labels for rare event detection. the active target time projection chamber yields data in a point cloud format and, with a surge of development into point cloud ml model architecture, proves to be a favorable tool for filtering our data pre-analysis pipeline, leading to a more efficient data analysis pipeline. for more information on this work, please checkout <a href="research_photos/nucleat_struc_poster.pdf">[view presentation]</a> for a brief overview or the website <a href="https://singhp99.github.io/AT-TPC_ML_workflow/">[view website]</a> for more details.</p>
+    </div>
+  </article>
+  
+</section>
+
+<dialog class="popup" id="popup">
+  <img id="popup-img" alt="">
+  <div class="popup-text">
+    <h2 id="popup-title"></h2>
+    <div id="popup-desc" class="desc"></div>
+  </div>
+</dialog>
+
+
+</div>
+    
+      <div class="burger-menu" id="burger">
+      <div class="bar1"></div>
+      <div class="bar2"></div>
+      <div class="bar3"></div>
+    </div>
+
+     <div class="small-character">
+        <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.57/build/spline-viewer.js"></script>
+        <spline-viewer class="rukia2" url="https://prod.spline.design/dsm6BWlMqzqTMiCo/scene.splinecode"></spline-viewer>
+        <div class="hidden2">isn't this so cool? </div>
+    </div>
+
+     <div class="menu-appear" id="menu"> 
+        <div class="home"> <a href="index.html">home</a></div>
+        <div class="about-me"> <a href="about_me.html">about me</a></div>
+        <div class="crochet"> <a href="crochet.html">crochet</a></div>
+        <div class="culinary"> <a href="culinary.html">culinary</a></div>
+        <div class="photography"> <a href="photography.html">photography</a></div>
+        <div class="coding"> <a href="coding.html">coding</a></div>
+         <div class="contact-me"> <a href="contact-me.html">contact me</a></div>
+        
+
+    </div>
+    
+
+    </div>
+
+</body>
+</html>
