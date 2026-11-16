@@ -11,6 +11,12 @@ html, body {
     scrollbar-width: auto; 
     -ms-overflow-style: none;
     scrollbar-color: #ffc0cb #be2784;
+    background-color: rgb(16,12,9);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: repeat;
+    background-size: 8vw auto;
+    position: relative;  
 }
 
 
@@ -172,6 +178,7 @@ html, body {
     z-index: 4;
     display: none;  
 }
+
 
 .menu-appear.active {
     display: block;  
