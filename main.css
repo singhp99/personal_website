@@ -13,6 +13,11 @@ html, body {
     -ms-overflow-style: none;
     scrollbar-color: #ffc0cb #be2784;
     background-color: rgb(16,12,9);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: repeat;
+    background-size: 8vw auto;
+    position: relative;  
 }
 
 

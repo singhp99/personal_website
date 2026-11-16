@@ -80,7 +80,7 @@ html, body {
     width: 56%;
     max-height: 80%;
     /* (1rem,10vw,4rem) */
-    font-size: clamp(1rem, 1.67vw, 1.8rem);
+    font-size: clamp(1rem, 1.65vw, 1.8rem);
     color: rgb(16,12,9);
     text-align: center;
     /* background-color: red; */
