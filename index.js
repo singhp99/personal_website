@@ -69,5 +69,8 @@ function linkHover(triggerSelector, targetSelector, targetSelectorTwo) {
 
 linkHover('.reveal-right1', '.intro-hidden','.intro-box3');
 
-
+const video = document.getElementById("video");
+if (video) {
+    document.addEventListener("touchstart", () => video.play(), { once: true });
+}
 

@@ -10,7 +10,7 @@ html, body {
     scroll-behavior: smooth;
     scrollbar-width: auto; 
     -ms-overflow-style: none;
-    scrollbar-color: #ffc0cb #be2784;
+    /* scrollbar-color: #ffc0cb #be2784; */
     background-color: rgb(16,12,9);
     background-attachment: fixed;
     background-position: center;
@@ -19,6 +19,13 @@ html, body {
     position: relative;  
 }
 
+html::-webkit-scrollbar { width: 14px; }
+html::-webkit-scrollbar-track { background: #be2784; }
+html::-webkit-scrollbar-thumb { background: #ffc0cb; }
+
+@supports not selector(::-webkit-scrollbar) {
+    html { scrollbar-color: #ffc0cb #be2784; }
+}
 
 .wrapper {
     position: relative;
@@ -27,9 +34,6 @@ html, body {
     overflow-y: hidden;
 }
 
-.html .body::-webkit-scrollbar {
-    display: none; 
-}
 
 .parallax_home {
     background-color: rgb(16,12,9);

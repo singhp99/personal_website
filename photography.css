@@ -10,7 +10,7 @@ html, body {
     scroll-behavior: smooth;
     scrollbar-width: auto;
     -ms-overflow-style: none;
-    scrollbar-color: #ffc0cb #be2784;
+    /* scrollbar-color: #ffc0cb #be2784; */
     background-color: rgb(16,12,9);
     background-image: 
     linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
@@ -21,6 +21,14 @@ html, body {
     background-repeat: repeat;
     background-size: 8vw auto;
     position: relative;  
+}
+
+html::-webkit-scrollbar { width: 14px; }
+html::-webkit-scrollbar-track { background: #be2784; }
+html::-webkit-scrollbar-thumb { background: #ffc0cb; }
+
+@supports not selector(::-webkit-scrollbar) {
+    html { scrollbar-color: #ffc0cb #be2784; }
 }
 
 html.menu-open { overflow: hidden; }
