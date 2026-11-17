@@ -9,6 +9,7 @@ html, body {
     height: 100%;
     width: 100%;
     scroll-behavior: smooth;
+    background-color: rgb(16,12,9);
     scrollbar-width: auto; 
     -ms-overflow-style: none;
     /* scrollbar-color: #ffc0cb #be2784; */
