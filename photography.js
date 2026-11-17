@@ -15,13 +15,24 @@ window.addEventListener("scroll", () => {
 
 
 
+// const burger = document.getElementById("burger");
+// const menu = document.getElementById("menu");
+
+// burger.addEventListener("click", () => {
+//     burger.classList.toggle("change");
+//     menu.classList.toggle("active");
+// });
+
 const burger = document.getElementById("burger");
 const menu = document.getElementById("menu");
 
-burger.addEventListener("click", () => {
-    burger.classList.toggle("change");
-    menu.classList.toggle("active");
-});
+if (burger && menu) {
+    burger.addEventListener("click", () => {
+        burger.classList.toggle("change");
+        const open = menu.classList.toggle("active");
+        document.documentElement.classList.toggle("menu-open", open);
+    });
+}
 
 
 window.onscroll = function () {

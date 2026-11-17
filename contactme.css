@@ -16,6 +16,7 @@ html, body {
     
 }
 
+html.menu-open { overflow: hidden; }
 
 .wrapper {
     position: relative;

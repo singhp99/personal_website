@@ -28,6 +28,7 @@ html, body {
 .html .body::-webkit-scrollbar {
     display: none; 
 }
+html.menu-open { overflow: hidden; }
 
 .crochet-title {
     height: 25%;

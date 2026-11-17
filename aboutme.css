@@ -86,7 +86,7 @@ html, body {
     width: 56%;
     max-height: 80%;
     /* (1rem,10vw,4rem) */
-    font-size: clamp(1rem, 1.65vw, 1.8rem);
+    font-size: clamp(0.85rem, min(1.5vw, 2.8vh), 1.8rem); 
     color: rgb(16,12,9);
     text-align: center;
     /* background-color: red; */
@@ -217,18 +217,7 @@ a:hover {
 .contact-me{top: 75vh;}
 
 
-@media only screen and (max-width: 800px) {
-    .small-character { width: 8rem; height: 8rem; bottom: 15%; left: 0;}
-    .hidden2 {height: 800px; font-size: 0.5rem;}
-    .burger-menu{width: 10%; bottom:15%;}
-    .home, .crochet, .culinary, .photography, .research, .coding, .contact-me {height: 2rem;}
-    .bar1, .bar2, .bar3 {height:5px;}
-    .change .bar1 {height: 5px;}
-    .change .bar3 {height: 5px;}
-    .circle{top:25%;left:50%;}
-    .intro_abme{height: 60vh;}
-    .abme-text{width:86%; height:55%; left:7%; top:77%;font-size: clamp(0.9rem,1.4vw,2rem); text-align:center;}
-}
+html.menu-open { overflow: hidden; }
 
 .petals {
     position: fixed; inset: 0;
@@ -261,4 +250,18 @@ a:hover {
     0%   { transform: translate(0, 0) rotate(0deg); }
     50%  { transform: translate(-60px, 55vh) rotate(180deg); }
     100% { transform: translate(40px, 110vh) rotate(360deg); }
+}
+
+@media only screen and (max-width: 800px) {
+    .small-character { width: 8rem; height: 8rem; bottom: 15%; left: 0;}
+    .hidden2 {height: 800px; font-size: 0.5rem;}
+    .burger-menu{width: 10%; bottom:15%;}
+    .home, .crochet, .culinary, .photography, .research, .coding, .contact-me {height: 2rem;}
+    .bar1, .bar2, .bar3 {height:5px;}
+    .change .bar1 {height: 5px;}
+    .change .bar3 {height: 5px;}
+    .circle{top:25%;left:50%;}
+    .intro_abme{height: 60vh;}
+    .abme-text{width:86%; height:55%; left:7%; top:77%;font-size: clamp(0.9rem,1.4vw,2rem); text-align:center;}
+    .parallax_home { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-attachment: scroll; }
 }

@@ -44,6 +44,7 @@ html, body {
     z-index: 1;
 }
 
+.parallax_home2 { z-index: auto; }
 
 .reveal-left, .reveal-right1, .reveal-right2 {
     position: absolute;
@@ -324,7 +325,7 @@ a:hover {
 
 
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
     .character { height: 70%; transform: translateY(0%); }
     .hidden { height: 100%; right: 0; top: 0; width: 75%; font-size: 1rem;}
     .rukia { width: 50vw; height: 52vh; }
@@ -338,12 +339,19 @@ a:hover {
     .intro-hidden {top: 25%; width: 35%;}
     .reveal-right1, .reveal-right2 {background-size: 21vw auto;}
     .myname {height: 20%; line-height: 95%; top:13%}
-    /* .welcome {transform: translateY(0rem);} */
     .burger-menu{width: 10%; bottom: 15%}
     .about-me, .crochet, .culinary, .photography, .research, .coding, .contact-me {height: 2rem;}
     .bar1, .bar2, .bar3 {height:5px;}
     .change .bar1 {height: 5px;}
     .change .bar3 {height: 5px;}
+    .parallax_home, .parallax_home2,
+    .reveal-left, .reveal-right1, .reveal-right2,
+    .border-left, .border-right { height: 100svh; }
+
+    .parallax_home, .parallax_home2 {
+        background-attachment: scroll;
+        background-size: 90vw auto;
+    }
 
 }
 

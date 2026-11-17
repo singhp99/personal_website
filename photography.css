@@ -23,6 +23,8 @@ html, body {
     position: relative;  
 }
 
+html.menu-open { overflow: hidden; }
+
 .photo-title {
     padding: 3rem 0 2rem;
     font-family: "Garamond", "Palatino Linotype", "Times New Roman", serif;
