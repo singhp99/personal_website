@@ -23,6 +23,7 @@ html, body {
     position: relative; 
 }
 
+body { height: auto; min-height: 100%; }
 
 
 .html .body::-webkit-scrollbar {
@@ -43,17 +44,17 @@ html.menu-open { overflow: hidden; }
     text-align: center;
     z-index: 2;
 }
-.gallery {
-    z-index: 1;
 
-    columns: 3 260px;          
-    column-gap: 5rem;
-    padding: 4rem 10%;         
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 5rem;
+    padding: 4rem 10%;
 }
 
 .piece {
-    break-inside: avoid;       
-    margin-bottom: 7em;
+    /* break-inside: avoid;        */
+    /* margin-bottom: 7em; */
     padding: 1.2rem;
     background: #be2784;
     position: relative;
@@ -74,15 +75,10 @@ html.menu-open { overflow: hidden; }
     display: block;
     width: 100%;
     height: auto;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
 }
-/* 
-.piece  {
-    font-family: "Garamond", "Palatino Linotype", "Times New Roman", serif;
-    color: #781552;
-    text-align: center;
-    font-size: clamp(1rem, 1.4vw, 1.4rem);
-    padding-top: 0.6rem;
-} */
+
 
 .piece:hover {
     transform: rotate(-8.5deg) scale(1.02);

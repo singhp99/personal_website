@@ -1,10 +1,3 @@
-// const burger = document.getElementById("burger");
-// const menu = document.getElementById("menu");
-
-// burger.addEventListener("click", () => {
-//     burger.classList.toggle("change");
-//     menu.classList.toggle("active");
-// });
 
 const burger = document.getElementById("burger");
 const menu = document.getElementById("menu");
@@ -75,15 +68,6 @@ function linkHover(triggerSelector, targetSelector, targetSelectorTwo) {
 }
 
 linkHover('.reveal-right1', '.intro-hidden','.intro-box3');
-
-var burgerMenu = document.getElementsByClassName('burger-menu');
-
-var overlay = document.getElementsByClassName('menu');
-
-burgerMenu.addEventListener('click', function() {
-  this.classList.toggle("close");
-  overlay.classList.toggle("overlay");
-});
 
 
 
